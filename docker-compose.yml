@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  testing:
+    build: .
+    image: testing:latest
+    volumes:
+      - .:/app
+    environment:
+      - OPENAI_API_KEY= #insert key here without '' or ""
+    command: ["python", "test.py"]
